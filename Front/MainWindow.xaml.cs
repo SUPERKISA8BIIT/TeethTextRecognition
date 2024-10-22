@@ -100,7 +100,7 @@ namespace Front
                     var rigthBox = GetAverageColor(imageMat, new Rectangle(Math.Min(imageMat.Width - 5, (int)avgPoint.X + 60), Math.Min((int)avgPoint.Y, imageMat.Height - 5), 5, 5));
 
                     var isWhiteBackground = IsCloseToWhite(rigthBox);
-                    CvInvoke.DrawMarker(imageMat, new Point(Math.Min(imageMat.Width - 5, (int)avgPoint.X + 60), Math.Min((int)avgPoint.Y, imageMat.Height - 5)), new MCvScalar(0, 255, 0), MarkerTypes.Cross);
+                    //CvInvoke.DrawMarker(imageMat, new Point(Math.Min(imageMat.Width - 5, (int)avgPoint.X + 60), Math.Min((int)avgPoint.Y, imageMat.Height - 5)), new MCvScalar(0, 255, 0), MarkerTypes.Cross);
 
                     if (!isWhiteBackground) continue;
 
@@ -120,9 +120,9 @@ namespace Front
                 string text;
                 if (nearestLetterDigit != default)
                 {
-                    DrawSector(imageMat, item.pos.ToPoint(), sectorSize, 180 + sectorAngle, 180 - sectorAngle, new MCvScalar(0, 0, 0), 1);
-                    CvInvoke.Line(imageMat, item.pos.ToPoint(), nearestLetterDigit.pos.ToPoint(), new MCvScalar(0, 0, 0));
-                    CvInvoke.Polylines(imageMat, nearestLetterDigit.box.Select(pt => new System.Drawing.Point((int)(pt.X), (int)(pt.Y))).ToArray(), true, new MCvScalar(255, 0, 0), thickness: 1);
+                   // DrawSector(imageMat, item.pos.ToPoint(), sectorSize, 180 + sectorAngle, 180 - sectorAngle, new MCvScalar(0, 0, 0), 1);
+                   // CvInvoke.Line(imageMat, item.pos.ToPoint(), nearestLetterDigit.pos.ToPoint(), new MCvScalar(0, 0, 0));
+                    CvInvoke.Polylines(imageMat, nearestLetterDigit.box.Select(pt => new System.Drawing.Point((int)(pt.X), (int)(pt.Y))).ToArray(), true, new MCvScalar(255, 0, 0), thickness: 2);
                     text = $"{nearestLetterDigit.text}-{item.text}";
                 } else
                 {
