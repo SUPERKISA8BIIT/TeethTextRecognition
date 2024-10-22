@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ok.TextRecognition.Detection\Ok.TextRecognition.Detection.csproj" />
+    <ProjectReference Include="..\Ok.TextRecognition.Extensions\Ok.TextRecognition.Extensions.csproj" />
+    <ProjectReference Include="..\Ok.TextRecognition.Recognition\Ok.TextRecognition.Recognition.csproj" />
+  </ItemGroup>
+
+</Project>
